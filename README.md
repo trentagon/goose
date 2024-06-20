@@ -1,4 +1,4 @@
-                                                        _...--.
+`                                                        _...--.
                                         _____......----'     .'
                                   _..-''                   .'
                                 .'                       ./
@@ -23,7 +23,7 @@ a8"    `Y88 a8"     "8a a8"     "8a I8[    "" a8P_____88
  `"YbbdP"Y8  `"YbbdP"'   `"YbbdP"'  `"YbbdP"'  `"Ybbd8"'  
  aa,    ,88                                               
   "Y8bbdP"    
-
+`
 A model of the [G]eologic [C]arbon [C]ycle during [S]nowball [E]arth (GOOSE).
 Developed by Trent Thomas and David Catling.
 
