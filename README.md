@@ -30,7 +30,7 @@ Developed by Trent Thomas and David Catling.
 
 This is a directory of python codes that track how the carbon and alkalinity in the Earth system evolve over time according to the geologic carbon cycle during global glaciation events in Earth's history known as "snowball Earth" events. A full model description is found in the associated manuscript:
 
-"Three-stage Formation of Cap Carbonates after Marinoan Snowball Glaciation Consistent with Depositional Timescales and Geochemistry" by Trent B. Thomas and David C. Catling. In revision, Nature Communications.
+"Three-stage Formation of Cap Carbonates after Marinoan Snowball Glaciation Consistent with Depositional Timescales and Geochemistry" by Trent B. Thomas and David C. Catling. Nature Communications.
 
 As a matter of courtesy, we request that people using this code please cite the above manuscript. In the interest of an "open source" approach, we also request that authors who use and modify the code, please send a copy of papers and modified code to the corresponding author (Trent Thomas; tbthomas@uw.edu).
 
