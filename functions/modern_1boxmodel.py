@@ -88,7 +88,7 @@ def masterODE(t,x,inp,full_output):
     W_sil = inp.modern_W_sil * ((pCO2_o / inp.modern_pCO2) ** inp.sil_alpha) * np.exp(
         (Ts - inp.modern_Ts) / inp.cont_Te) # continental silicate weathering flux
 
-    R = 8.314 # universal gas constant
+    R = 8.314e-3 # universal gas constant
     Hp = 10 ** (-pH_p) # hydrogen ion concentration in pore space, calculated directly from pH
     W_sea = inp.k_Wsea * np.exp(-inp.E_bas/(R*Tp)) * (Hp/inp.modern_Hp)**inp.sea_gamma # seafloor weathering flux
 

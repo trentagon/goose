@@ -144,7 +144,7 @@ class inputs:
         self.k_pore = self.modern_P_pore / (omega_p - 1) ** self.carb_n
 
         # Get proportionality constants
-        R = 8.314
+        R = 8.314e-3
         self.k_Wsea = self.modern_W_sea / np.exp(-self.E_bas / (R * Tp))
 
         #Recalculate downstream values just in case a parameter was changed (this is not calibration to modern)

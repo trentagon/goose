@@ -56,7 +56,7 @@ def masterODE(t,x,inp,full_output):
         Ts = cm.climate_model_JKT(pCO2_o, inp.neoproterozoic_luminosity)  # calculate surface temperature
         omega_o, pCO2_o, pH_o = cm.equilibriumChemistryOcean(Ts, Ao, Co, inp.modern_s,
                                                              inp.modern_Ao,
-                                                             inp.modern_Ca_ocean)  # calculate surface ocean chemistry
+                                                             inp.modern_Ca_ocean + inp.snowball_ice_volume*(inp.meltwater_Ca - 0.5*inp.meltwater_alk))  # calculate surface ocean chemistry
 
         tcount += 1  # add iteration
         if abs(Ts_old - Ts) / Ts_old < T_threshold or tcount >= max_itter: # check for equilibrium or max iteration limit
@@ -83,7 +83,7 @@ def masterODE(t,x,inp,full_output):
     W_sil = inp.f_w * inp.modern_W_sil * ((pCO2_o / inp.modern_pCO2) ** inp.sil_alpha) * np.exp(
         (Ts - inp.modern_Ts) / inp.cont_Te) # continental silicate weathering flux
 
-    R = 8.314 # universal gas constant
+    R = 8.314e-3 # universal gas constant
     Hp = 10 ** (-pH_p) # hydrogen ion concentration in pore space, calculated directly from pH
     W_sea = inp.k_Wsea * np.exp(-inp.E_bas/(R*Tp)) * (Hp/inp.modern_Hp)**inp.sea_gamma # seafloor weathering flux
 

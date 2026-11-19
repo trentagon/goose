@@ -50,8 +50,8 @@ def masterODE(t,x,inp,full_output):
     Tp = cm.poreSpaceTemp(Td)
 
     omega_o, pCO2_o, pH_o = cm.equilibriumChemistryOcean(Ts, Ao, Co, inp.snowball_s,
-                                                         inp.modern_Ao,
-                                                         inp.modern_Ca_ocean)  # calculate surface ocean chemistry
+                                                         inp.modern_Ao/(1-inp.snowball_ice_volume),
+                                                         inp.modern_Ca_ocean/(1-inp.snowball_ice_volume))  # calculate surface ocean chemistry
 
     global pCO2_track  # keep track of the best pCO2 guess
     pCO2_track = pCO2_o # record the new pCO2 value to use as initial guess for next time
@@ -68,7 +68,7 @@ def masterODE(t,x,inp,full_output):
 
     W_sil = inp.snowball_W_sil # continental silicate weathering flux
 
-    R = 8.314 # universal gas constant
+    R = 8.314e-3 # universal gas constant
     Hp = 10 ** (-pH_p) # hydrogen ion concentration in pore space, calculated directly from pH
     W_sea = inp.hyalo * inp.k_Wsea * np.exp(-inp.E_bas/(R*Tp)) * (Hp/inp.modern_Hp)**inp.sea_gamma # seafloor weathering flux
 

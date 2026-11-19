@@ -75,8 +75,8 @@ def masterODE(t,x,inp,full_output):
 
 
     omega_d, pCO2_d, pH_d = cm.equilibriumChemistryOcean(Td, Ad, Cd, 0,
-                                                         inp.modern_Ao,
-                                                         inp.modern_Ca_ocean)  # calculate deep ocean chemistry
+                                                         inp.modern_Ao/(1-inp.snowball_ice_volume),
+                                                         inp.modern_Ca_ocean/(1-inp.snowball_ice_volume))  # calculate deep ocean chemistry
 
     omega_p, pCO2_p, pH_p = cm.equilibriumChemistryOcean(Tp, Ap, Cp, 0,
                                                          inp.modern_Ap,
@@ -92,7 +92,7 @@ def masterODE(t,x,inp,full_output):
     W_sil = inp.f_w * inp.modern_W_sil * ((pCO2_s / inp.modern_pCO2) ** inp.sil_alpha) * np.exp(
         (Ts - inp.modern_Ts) / inp.cont_Te) # continental silicate weathering flux
 
-    R = 8.314 # universal gas constant
+    R = 8.314e-3 # universal gas constant
     Hp = 10 ** (-pH_p) # hydrogen ion concentration in pore space, calculated directly from pH
     W_sea = inp.k_Wsea * np.exp(-inp.E_bas/(R*Tp)) * (Hp/inp.modern_Hp)**inp.sea_gamma # seafloor weathering flux
 

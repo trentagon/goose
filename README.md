@@ -35,3 +35,14 @@ This is a directory of python codes that track how the carbon and alkalinity in 
 As a matter of courtesy, we request that people using this code please cite the above manuscript. In the interest of an "open source" approach, we also request that authors who use and modify the code, please send a copy of papers and modified code to the corresponding author (Trent Thomas; tbthomas@uw.edu).
 
 This code requires only some standard python libraries to run and was developed in python 3. There are 2 jupyter notebooks designed to act as a tutorial to the code. We recommend starting with "TutorialSolo".
+
+## Bug fixes (November 2026)
+
+The original GOOSE code was written by hand before publication in 2024. After publication, we analyzed the code with an LLM and found two implementation errors. The code at the top level of this repository now has fixes for these errors. The fixes do not add new physics. They make the code calculate the model equations correctly.
+
+* Bug 1 was related to calcium conservation as the ocean volume changes when the ice sheet forms and melts.
+* Bug 2 was related to a unit conversion in the seafloor weathering parameterization.
+
+Further tests show that these bugs did not significantly alter the conclusions from the 2024 Nature Communications paper or the 2026 Geology paper, but future work should incorporate the fixes for accuracy. The Geology paper used a modified version of this code, archived at Zenodo (https://doi.org/10.5281/zenodo.17567190).
+
+The previous, uncorrected version of the code is in `Legacy_NatComms2024` with the same files and structure. Use this version to reproduce the published results.
