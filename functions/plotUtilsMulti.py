@@ -148,7 +148,7 @@ def plotFullClimEvol_multi(goose_rec):
     
     ax[3].fill_between(t,cons[0,:,pd["Omega"]],  cons[2,:,pd["Omega"]], color = color4, alpha = 0.2)
     ax[3].plot(t, cons[1,:,pd["Omega"]],color = color4, linewidth=2.5)
-    ax[3].set_ylabel('Saturation \n State, $\\Omega$', fontsize=yfs)
+    ax[3].set_ylabel('Saturation \n State, $\\Omega$', fontsize=yfs)  # Nov2026 Bug fix: $\Omega$ --> $\\Omega$
     ax[3].set_xlim([xmin, xmax])
     ax[3].set_yticks([0,20,40,60,80])
     ax[3].set_xticks(np.linspace(0,20,11))
