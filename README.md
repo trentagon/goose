@@ -43,6 +43,8 @@ The original GOOSE code was written by hand before publication in 2024. After pu
 * Bug 1 was related to calcium conservation as the ocean volume changes when the ice sheet forms and melts.
 * Bug 2 was related to a unit conversion in the seafloor weathering parameterization.
 
+Each fixed line in the code is flagged with the comment `# Nov2026 Bug fix`.
+
 Further tests show that these bugs did not significantly alter the conclusions from the 2024 Nature Communications paper or the 2026 Geology paper, but future work should incorporate the fixes for accuracy. The Geology paper used a modified version of this code, archived at Zenodo (https://doi.org/10.5281/zenodo.17567190).
 
 The previous, uncorrected version of the code is in `Legacy_NatComms2024` with the same files and structure. Use this version to reproduce the published results.
