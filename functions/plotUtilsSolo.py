@@ -120,7 +120,7 @@ def plotFullClimEvol_solo(model_output):
     
     # Plot Omega
     ax[3].plot(t, omega,color = color4, linewidth=2.5)
-    ax[3].set_ylabel('Saturation \n State, $\\Omega$', fontsize=yfs)
+    ax[3].set_ylabel('Saturation \n State, $\\Omega$', fontsize=yfs)  # Nov2026 Bug fix: $\Omega$ --> $\\Omega$
     ax[3].set_xlim([xmin, xmax])
     ax[3].set_yticks([0,10,20,30,40,50])
     ax[3].set_xticks(np.linspace(0,20,11))
